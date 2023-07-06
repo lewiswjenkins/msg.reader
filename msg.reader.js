@@ -413,9 +413,9 @@
 
   // todo: html body test
   function applyValueConverter(fieldName, fieldTypeMapped, fieldValue) {
-    if (fieldTypeMapped === 'binary' && fieldName === 'bodyHTML') {
-      return convertUint8ArrayToString(fieldValue);
-    }
+    //if (fieldTypeMapped === 'binary' && fieldName === 'bodyHTML') {
+    //  return convertUint8ArrayToString(fieldValue);
+    //}
     return fieldValue
   }
 
