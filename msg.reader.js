@@ -126,9 +126,12 @@
   // MSG Reader implementation
 
   // check MSG file header
-  function isMSGFile(ds) {
-    ds.seek(0);
-    return arraysEqual(CONST.FILE_HEADER, ds.readInt8Array(CONST.FILE_HEADER.length));
+  function isMSGFile(dataView) {
+    var headerBytes = new Uint8Array(CONST.FILE_HEADER.length);
+    for (var i = 0; i < CONST.FILE_HEADER.length; i++) {
+      headerBytes[i] = dataView.getUint8(i);
+    }
+    return arraysEqual(CONST.FILE_HEADER, headerBytes);
   }
 
   // FAT utils
